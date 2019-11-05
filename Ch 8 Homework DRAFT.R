@@ -169,7 +169,7 @@ gbmImp
 cbGrid <- expand.grid(committees = c(1:10, 20, 50, 75, 100), 
                       neighbors = c(0, 1, 5, 9))
 
-set.seed(100)
+set.seed(111)
 cubistTune <- train(train1[, -13], train1[, 13],
                     "cubist",
                     tuneGrid = cbGrid,
@@ -179,3 +179,6 @@ plot(cubistTune, auto.key = list(columns = 4, lines = TRUE))
 cbImp <- varImp(cubistTune, scale = FALSE)
 cbImp
 
+processingTime <- endTime - startTime
+
+processingTime 
